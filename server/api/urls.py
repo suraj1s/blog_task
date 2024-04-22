@@ -22,7 +22,7 @@ urlpatterns = [
     path(f'{api_prefix}/', include([
         path('v1/', include([
             path("auth/", include('api.apps.auth.urls')),
-            # path("blog/", include('blog.urls')),
+            path("blog/", include('api.apps.blog.urls')),
            
         ]))
     ]))
