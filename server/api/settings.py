@@ -172,8 +172,8 @@ REST_FRAMEWORK = {
 # The `SPECTACULAR_SETTINGS` dictionary is used to configure the settings for the Django Spectacular
 # package, which is used for generating OpenAPI schemas for Django REST Framework APIs.
 SPECTACULAR_SETTINGS = {
-    "TITLE": "E-commerce API",
-    "DESCRIPTION": "API for e-commerce",
+    "TITLE": "Blog API",
+    "DESCRIPTION": "API for Blogs",
     "VERSION": "1.0.0",
     "SCHEMA_PATH_PREFIX": r"/api/v[0-9]",
 }

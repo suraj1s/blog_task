@@ -6,21 +6,45 @@ import App from "./App";
 import Providers from "./redux/redux-store/Providers";
 import SignIn from "./components/auth/Signin";
 import SignUp from "./components/auth/Signup";
+import Navbar from "./components/static/Navbar";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <>
+        <Navbar />
+        <App />
+      </>
+    ),
   },
   {
     path: "/auth/signin",
-    element: <SignIn />,
+    element: (
+      <>
+        <Navbar />
+        <SignIn />
+      </>
+    ),
   },
   {
     path: "/auth/signup",
-    element: <SignUp />,
+    element: (
+      <>
+        <Navbar />
+        <SignUp />
+      </>
+    ),
   },
-  
+  {
+    path: "/blogs/create",
+    element: (
+      <>
+        <Navbar />
+        <App />
+      </>
+    ),
+  },
 ]);
 
 // @ts-expect-error - This is type warning

@@ -101,7 +101,7 @@ const SignUp = () => {
           {/* <img
             className="mx-auto h-20 w-20"
             src={Logo}
-            alt="MERN E-commerce"
+            alt="Blog"
           /> */}
           <h2 className="mt-10 text-center text-2xl font-bold  ">
             Sign up to your account

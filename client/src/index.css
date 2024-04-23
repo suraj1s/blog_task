@@ -7,6 +7,11 @@
     scroll-behavior: smooth !important;
     border-color: #eaecf0;
   }
+
+  body{
+    @apply bg-slate-950;
+
+  }
   
   /* Scrollbar start */
   
@@ -17,15 +22,6 @@
   ::-webkit-scrollbar {
     width: 4px;
     height: 4px;
-  }
-  ::-webkit-scrollbar-track {
-    background: var(--primary-200);
-  }
-  ::-webkit-scrollbar-thumb {
-    background: var(--primary-300);
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-400);
   }
   /* Scrollbar End */
   
@@ -41,13 +37,11 @@
   .customInputCSS {
     border-radius: 8px;
     border: 1px solid var(--primary-300, #ccd5df);
-    border: 1px solid var(--primary-300, color(display-p3 0.8144 0.8349 0.8656));
     background: var(--White, #fff);
     background: var(--White, color(display-p3 1 1 1));
   
     /* Shadow/xs */
     box-shadow: 0px 1px 2px 0px rgba(14, 24, 41, 0.05);
-    box-shadow: 0px 1px 2px 0px color(display-p3 0.0627 0.0941 0.1569 / 0.05);
   }
   @keyframes spinner-d3wgkg {
     to {
@@ -57,7 +51,6 @@
   
   .popupmodalblur {
     background: rgba(18, 18, 18, 0.3);
-    background: color(display-p3 0.0706 0.0706 0.0706 / 0.3);
     backdrop-filter: blur(2.5px);
   }
   

@@ -68,7 +68,7 @@ const SignIn = () => {
     <div className="container ">
       <div className="py-12">
         <div>
-          {/* <img className="mx-auto h-20 w-20" src={Logo} alt="MERN E-commerce" /> */}
+          {/* <img className="mx-auto h-20 w-20" src={Logo} alt="Blog" /> */}
           <h2 className="mt-10 text-center text-2xl font-bold  ">
             Sign in to your account
           </h2>
