@@ -19,7 +19,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
     }),   
     checkUser: builder.mutation({
       query: (signInData : SignInDataType ) => ({
-        url: `auth/login/`,
+        url: `auth/signin/`,
         method: "POST",
         body : signInData 
       }),
@@ -27,7 +27,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
     }), 
     checkAuthToken: builder.query({
         query: () => ({
-          url: `auth/login/`,
+          url: `auth/signin/`,
           method: "GET"
         }),
         providesTags: ["authUser"]

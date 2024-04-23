@@ -7,6 +7,8 @@ import Providers from "./redux/redux-store/Providers";
 import SignIn from "./components/auth/Signin";
 import SignUp from "./components/auth/Signup";
 import Navbar from "./components/static/Navbar";
+import CreateBlogs from "./components/blogs/create-blogs/CreateBlogs";
+import Protected from "./components/static/Protected";
 
 const router = createBrowserRouter([
   {
@@ -39,10 +41,10 @@ const router = createBrowserRouter([
   {
     path: "/blogs/create",
     element: (
-      <>
+      <Protected>
         <Navbar />
-        <App />
-      </>
+        <CreateBlogs />
+      </Protected>
     ),
   },
 ]);

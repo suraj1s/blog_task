@@ -1,4 +1,3 @@
-
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { PASSWORD_REGEX } from "../common/constants";
@@ -13,7 +12,6 @@ const inputTypeDetails: inputField[] = [
     title: "Username",
     name: "username",
     placeholder: "Enter your Username address ",
-    // icon: <Status />,
     type: "text",
     validation: {
       required: " plese enter a valid Username ",
@@ -23,8 +21,6 @@ const inputTypeDetails: inputField[] = [
     title: "Password",
     name: "password",
     placeholder: "Enter your password",
-
-    // icon: <Status />,
     type: "password",
     eyeIcon: true,
     validation: {
@@ -68,7 +64,6 @@ const SignIn = () => {
     <div className="container ">
       <div className="py-12">
         <div>
-          {/* <img className="mx-auto h-20 w-20" src={Logo} alt="Blog" /> */}
           <h2 className="mt-10 text-center text-2xl font-bold  ">
             Sign in to your account
           </h2>
@@ -90,7 +85,6 @@ const SignIn = () => {
                   inputfield={inputTypeDetails[1]}
                   register={register}
                 />
-               
               </div>
               <CustomButton title="sign in" type="submit" />
               <div className="flex gap-x-2 items-center">

@@ -11,7 +11,6 @@ const inputTypeDetails: inputField[] = [
     title: "Username",
     name: "username",
     placeholder: "Enter your Username  ",
-    // icon: <Status />,
     type: "text",
     validation: {
       required: " plese enter a valid user name ",
@@ -21,7 +20,6 @@ const inputTypeDetails: inputField[] = [
     title: "Email",
     name: "email",
     placeholder: "Enter your email address ",
-    // icon: <Status />,
     type: "text",
     validation: {
       required: " plese enter a valid email ",
@@ -35,8 +33,6 @@ const inputTypeDetails: inputField[] = [
     title: "Password",
     name: "password",
     placeholder: "Enter your password",
-
-    // icon: <Status />,
     type: "text",
     validation: {
       required: " plese enter a valid password ",
@@ -52,8 +48,6 @@ const inputTypeDetails: inputField[] = [
     title: "Retype Password",
     name: "retypepassword",
     placeholder: "Retype your password",
-
-    // icon: <Status />,
     type: "text",
     validation: {
       required: " plese enter a valid password ",
@@ -71,11 +65,6 @@ const SignUp = () => {
   const [crerateUser] = useCreateUserMutation();
   const navigate = useNavigate();
   const onsubmitHandler = async (data: any) => {
-    // const formData = new FormData()
-    // formData.append("name", data.name)
-    // formData.append("status", selectionValue.value)
-    // formData.append("branch", branch)
-    console.log(data, "data");
     try {
       const response: any = await crerateUser({ signUpData: data });
       if (response?.error) {
@@ -134,7 +123,6 @@ const SignUp = () => {
                 <p>Alerady have account </p>
                 <Link to={"/auth/signin"}>
                   <p className="text-blue-400  text-sm font-semibold">
-                    
                     Sign In
                   </p>
                 </Link>
