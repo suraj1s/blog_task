@@ -1,5 +1,4 @@
 // import { useSignOutMutation } from "../../redux/redux-slices/auth/apiService/auth";
-import { useNavigate } from "react-router-dom";
 import CustomButton from "../common/CustomButton";
 import Cookies from "js-cookie";
 import { useAppDispatch } from "../../redux/redux-store/hooks";
@@ -7,7 +6,6 @@ import { resetLoginedUser } from "../../redux/redux-slices/auth/authSlice";
 const Signout = () => {
   //   const [signout] = useSignOutMutation();
   const refresh_token = Cookies.get("refresh_token");
-  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   if (!refresh_token) {
     return <div>you are not logined</div>;
