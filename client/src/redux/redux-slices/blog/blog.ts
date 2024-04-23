@@ -7,6 +7,21 @@ export interface IBlog {
   content: string;
 }
 
+
+export interface ICreateBlog {
+  title: string;
+  content: string;
+}
+
+export interface IUpdateBlog {
+  id: string;
+  data : {
+    title?: string;
+    content?: string;
+  }
+}
+
+
 export interface IBlogTypes {
   count: number;
   next: null;

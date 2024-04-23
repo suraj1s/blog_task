@@ -8,7 +8,7 @@ const Protected = (children: any) => {
     try {
       let decoded: any;
       decoded = jwtDecode(token ? token : "");
-      console.log(decoded, "decoded");
+      // console.log(decoded, "decoded");
       if (decoded && decoded.exp && decoded.user_id) {
         if (Date.now() > decoded.exp * 1000) {
           Cookies.remove("access_token");
@@ -26,7 +26,7 @@ const Protected = (children: any) => {
   };
   const is_token_valid = tokenValidation(token);
 
-  console.log(is_token_valid, "is_token_valid");
+  // console.log(is_token_valid, "is_token_valid");
   return is_token_valid ? (
     <div>
       <div>this is protected</div>

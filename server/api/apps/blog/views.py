@@ -22,6 +22,24 @@ class BlogListAPIView(generics.ListAPIView):
         return queryset
     
 
+class BlogListByUserAPIView(generics.ListAPIView):
+    serializer_class = BlogSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def get_queryset(self):
+        user = self.request.user
+        search_value = self.request.query_params.get('search', '')
+
+        queryset = Blog.objects.filter(author=user)
+
+        if search_value:
+            queryset = queryset.filter(
+                Q(title__icontains=search_value) |
+                Q(content__icontains=search_value)
+            )
+        return queryset
+
+
 class BlogCreateAPIView(generics.CreateAPIView):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer

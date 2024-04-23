@@ -71,7 +71,7 @@ const SignUp = () => {
         toast.error("errors", response?.error?.data?.errors[0]?.detail);
       } else {
         navigate("/auth/signin");
-        console.log(response, "response");
+        // // console.log(response, "response");
         toast.success(" user created successfully");
       }
     } catch (error: any) {

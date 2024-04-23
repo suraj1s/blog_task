@@ -47,7 +47,7 @@ const SignIn = () => {
       if (response?.error) {
         toast.error("errors", response?.error?.data?.errors[0]?.detail);
       } else {
-        console.log(response, "response");
+        // // console.log(response, "response");
         Cookies.set("access_token", response?.data?.access_token);
         Cookies.set("refresh_token", response?.data?.refresh_token);
         toast.success(" user loggned successfully");

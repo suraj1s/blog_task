@@ -10,8 +10,8 @@ export const navLinkData: InavLinks[] = [
     link: "/",
   },
   {
-    title: "Create Blogs",
-    link: "/blogs/create",
+    title: "My Blogs",
+    link: "/my-blogs",
   },
   {
     title: "Profile",

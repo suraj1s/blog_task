@@ -6,12 +6,14 @@ import Providers from "./redux/redux-store/Providers";
 import SignIn from "./components/auth/Signin";
 import SignUp from "./components/auth/Signup";
 import Navbar from "./components/static/Navbar";
-import CreateBlogs from "./components/blogs/create-blogs/CreateBlogs";
+import CreateBlogs from "./components/blogs/my-blogs/CreateBlogs";
 import Protected from "./components/static/Protected";
 import Blogs from "./components/blogs/Blogs";
 import Blog from "./components/blogs/Blog";
 import Signout from "./components/auth/Signout";
 import Profile from "./components/profile/Profile";
+import MyBlogs from "./components/blogs/my-blogs/MyBlogs";
+import EditBlogs from "./components/blogs/my-blogs/EditBlogs";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +26,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/blog/:blogId",
+    path: "/:blogId",
     element: (
       <>
         <Navbar />
@@ -52,11 +54,29 @@ const router = createBrowserRouter([
   },
  
   {
-    path: "/blogs/create",
+    path: "/my-blogs",
+    element: (
+      <Protected>
+        <Navbar />
+        <MyBlogs />
+      </Protected>
+    ),
+  },
+  {
+    path: "/create-blog",
     element: (
       <Protected>
         <Navbar />
         <CreateBlogs />
+      </Protected>
+    ),
+  },
+  {
+    path: "/edit-blog/:blogId",
+    element: (
+      <Protected>
+        <Navbar />
+        <EditBlogs />
       </Protected>
     ),
   },

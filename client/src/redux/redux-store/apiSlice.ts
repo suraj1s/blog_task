@@ -38,7 +38,7 @@ const baseQueryWithReauth = async (
         api,
         extraOptions
       );
-      console.log(refreshResult, "refreshResult");
+      // console.log(refreshResult, "refreshResult");
       if (refreshResult.data) {
         Cookies.set("access_token", refreshResult.data.access);
         const result = baseQuery(args, api, extraOptions);

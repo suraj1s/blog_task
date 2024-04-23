@@ -24,7 +24,7 @@ const Search = ({ searchValue, placeholder, className }: props) => {
         type="text"
         onChange={(e) => setSearch(e.target.value)}
         placeholder={placeholder ? placeholder : "Search"}
-        className="customInputCSS w-full px-[14px] py-[10px] pl-[35px] text-gray-700 outline-none"
+        className="rounded-lg border border-gray-300 w-full px-[14px] py-[10px] pl-[35px] text-gray-700 outline-none"
       />
     </div>
   );

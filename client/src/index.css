@@ -2,55 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
-    scroll-behavior: smooth !important;
-    border-color: #eaecf0;
-  }
+  scroll-behavior: smooth !important;
+  border-color: #eaecf0;
+}
 
-  body{
-    @apply bg-slate-950;
+body {
+  @apply bg-slate-950;
+}
 
+/* Scrollbar start */
+
+.hide-sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+/* Scrollbar End */
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 3.8px solid;
+  border-color: #dbdcef;
+  border-right-color: #5d659e;
+  animation: spinner-d3wgkg 0.6s infinite linear;
+}
+@keyframes spinner-d3wgkg {
+  to {
+    transform: rotate(1turn);
   }
-  
-  /* Scrollbar start */
-  
-  .hide-sidebar::-webkit-scrollbar {
-    display: none;
-  }
-  
-  ::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-  }
-  /* Scrollbar End */
-  
-  .spinner {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    border: 3.8px solid;
-    border-color: #dbdcef;
-    border-right-color: #5d659e;
-    animation: spinner-d3wgkg 0.6s infinite linear;
-  }
-  .customInputCSS {
-    border-radius: 8px;
-    border: 1px solid var(--primary-300, #ccd5df);
-    background: var(--White, #fff);
-    background: var(--White, color(display-p3 1 1 1));
-  
-    /* Shadow/xs */
-    box-shadow: 0px 1px 2px 0px rgba(14, 24, 41, 0.05);
-  }
-  @keyframes spinner-d3wgkg {
-    to {
-      transform: rotate(1turn);
-    }
-  }
-  
-  .popupmodalblur {
-    background: rgba(18, 18, 18, 0.3);
-    backdrop-filter: blur(2.5px);
-  }
-  
+}
+
+.popupmodalblur {
+  background: rgba(18, 18, 18, 0.3);
+  backdrop-filter: blur(2.5px);
+}

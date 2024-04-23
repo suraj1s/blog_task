@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 export const mutationHandler = async (
   apiHook: any,
   dataToBeSent: any,
-  onSuccess: (response?: Obj) => void,
+  onSuccess: (response?: any) => void,
   toastmessage = "",
   enableToast = true
 ) => {

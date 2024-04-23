@@ -9,7 +9,7 @@ class BlogSerializer(serializers.ModelSerializer):
         fields = '__all__'
         read_only_fields = ['author']
 
-    def get_authot(self, obj):
+    def get_author(self, obj):
         return obj.author.username
         
     def create(self, validated_data):
