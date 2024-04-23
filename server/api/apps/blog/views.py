@@ -8,27 +8,28 @@ from .serializers import BlogSerializer
 class BlogListAPIView(generics.ListAPIView):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
     
 
 class BlogCreateAPIView(generics.CreateAPIView):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
-    # permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]
 
 class BlogDetailAPIView(generics.RetrieveAPIView):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
 
 
 class BlogUpdateAPIView(generics.UpdateAPIView):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class BlogDeleteAPIView(generics.DestroyAPIView):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
+    permission_classes = [permissions.IsAuthenticated]
    

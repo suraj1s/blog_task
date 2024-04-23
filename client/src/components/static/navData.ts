@@ -13,8 +13,8 @@ export const navLinkData: InavLinks[] = [
     title: "Create Blogs",
     link: "/blogs/create",
   },
-  {
-    title: "Signin",
-    link: "/auth/signin",
-  },
+  // {
+  //   title: "Signin",
+  //   link: "/auth/signin",
+  // },
 ];

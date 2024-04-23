@@ -2,13 +2,13 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import App from "./App";
 import Providers from "./redux/redux-store/Providers";
 import SignIn from "./components/auth/Signin";
 import SignUp from "./components/auth/Signup";
 import Navbar from "./components/static/Navbar";
 import CreateBlogs from "./components/blogs/create-blogs/CreateBlogs";
 import Protected from "./components/static/Protected";
+import Blogs from "./components/blogs/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <Navbar />
-        <App />
+        <Blogs />
       </>
     ),
   },
