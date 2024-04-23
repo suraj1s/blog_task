@@ -18,19 +18,13 @@ export const authApiSlice = apiSlice.injectEndpoints({
       }),
       invalidatesTags: ["authUser"],
     }),
-    checkAuthToken: builder.query({
-      query: () => ({
-        url: `auth/signin/`,
-        method: "GET",
+    signOut: builder.mutation({
+      query: ({ refresh_token }: { refresh_token: string }) => ({
+        url: `auth/signout/`,
+        method: "POST",
+        body: { refresh_token },
       }),
-      providesTags: ["authUser"],
-    }),
-    signOut: builder.query({
-      query: () => ({
-        url: `auth/logout/`,
-        method: "GET",
-      }),
-      providesTags: ["authUser"],
+      invalidatesTags: ["authUser"],
     }),
   }),
 });
@@ -38,6 +32,5 @@ export const authApiSlice = apiSlice.injectEndpoints({
 export const {
   useCreateUserMutation,
   useCheckUserMutation,
-  useCheckAuthTokenQuery,
-  useSignOutQuery,
+  useSignOutMutation,
 } = authApiSlice;

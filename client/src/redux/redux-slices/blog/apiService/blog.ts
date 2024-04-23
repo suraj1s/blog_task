@@ -1,6 +1,6 @@
 import { LIMIT } from "../../../../components/common/constants";
 import { apiSlice } from "../../../redux-store/apiSlice";
-import { IBlogTypes, IGetBlog } from "../blog";
+import { IBlog, IBlogTypes, IGetBlog } from "../blog";
 
 export const blogApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
@@ -25,11 +25,19 @@ export const blogApiSlice = apiSlice.injectEndpoints({
       }),
       providesTags: ["blog"],
     }),
+
+    getBlog: builder.query<IBlog, { id: string }>({
+      query: ({ id }) => ({
+        url: `blog/detail/${id}/`,
+        method: "GET",
+      }),
+      providesTags: ["blog"],
+    }),
   }),
 });
 
 export const {
   useCreateBlogMutation,
-  useGetAllBlogsQuery,
+  useGetBlogQuery,
   useLazyGetAllBlogsQuery,
 } = blogApiSlice;

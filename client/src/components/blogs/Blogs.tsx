@@ -52,14 +52,19 @@ const Blogs = () => {
   );
 
   return (
-    <div className="pt-10 md:pt-24">
+    <div className="pt-10 md:pt-24 max-w-2xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between gap-5 items-center py-5">
       <h1>All blogs</h1>
+      <Search searchValue={(val) => setSearchValue(val)} />
+
+        </div>
+      
       {searchValue && isLoading && (
         <div className=" text-center py-5  text-black font-bold text-3xl">
           Searching...
         </div>
       )}
-      <div className="flex flex-col gap-10 h-fit max-w-2xl  ">
+      <div className="flex flex-col gap-10 h-fit   ">
         {finalBlogs?.map((item, index) => (
           <div key={index}>
             {finalBlogs.length === index + 1 ? (

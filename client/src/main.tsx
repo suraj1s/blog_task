@@ -9,6 +9,9 @@ import Navbar from "./components/static/Navbar";
 import CreateBlogs from "./components/blogs/create-blogs/CreateBlogs";
 import Protected from "./components/static/Protected";
 import Blogs from "./components/blogs/Blogs";
+import Blog from "./components/blogs/Blog";
+import Signout from "./components/auth/Signout";
+import Profile from "./components/profile/Profile";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +20,15 @@ const router = createBrowserRouter([
       <>
         <Navbar />
         <Blogs />
+      </>
+    ),
+  },
+  {
+    path: "/blog/:blogId",
+    element: (
+      <>
+        <Navbar />
+        <Blog />
       </>
     ),
   },
@@ -38,12 +50,31 @@ const router = createBrowserRouter([
       </>
     ),
   },
+ 
   {
     path: "/blogs/create",
     element: (
       <Protected>
         <Navbar />
         <CreateBlogs />
+      </Protected>
+    ),
+  },
+  {
+    path: "/auth/signout",
+    element: (
+      <Protected>
+        <Navbar />
+        <Signout />
+      </Protected>
+    ),
+  },
+  {
+    path: "/profile",
+    element: (
+      <Protected>
+        <Navbar />
+        <Profile />
       </Protected>
     ),
   },

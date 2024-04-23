@@ -3,12 +3,23 @@ from rest_framework import generics, permissions
 from rest_framework.views import APIView
 from .models import Blog
 from .serializers import BlogSerializer
-
+from django.db.models import Q
 
 class BlogListAPIView(generics.ListAPIView):
-    queryset = Blog.objects.all()
     serializer_class = BlogSerializer
     permission_classes = [permissions.AllowAny]
+    
+    def get_queryset(self):
+        search_value = self.request.query_params.get('search', '')
+        queryset = ''
+        if search_value:
+            queryset = Blog.objects.filter(
+                Q(title__icontains=search_value) |
+                Q(content__icontains=search_value)
+            )
+        else :
+            queryset = Blog.objects.all()
+        return queryset
     
 
 class BlogCreateAPIView(generics.CreateAPIView):

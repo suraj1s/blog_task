@@ -14,27 +14,10 @@ interface SignupDataType {
   username: string;
 }
 
-interface ResetPasswordType {
-  email: string;
-  token: string;
-  password: string;
-}
-
-interface AddressType {
-  Country: string;
-  StreetAddress: string;
-  StateOrProvince: string;
-  ZIPorPostalCode: number;
-}
-
 interface UserType {
-  name?: string;
-  token?: string;
+  username?: string;
   email?: string;
-  password?: string;
-  role?: string;
   phone?: number;
-  address?: AddressType;
 }
 
 interface ErrorType {

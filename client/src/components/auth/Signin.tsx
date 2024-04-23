@@ -6,6 +6,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import CustomInput, { inputField } from "../common/CustomInput";
 import { useCheckUserMutation } from "../../redux/redux-slices/auth/apiService/auth";
+import { setLoginedUser } from "../../redux/redux-slices/auth/authSlice";
+import { useAppDispatch } from "../../redux/redux-store/hooks";
 
 const inputTypeDetails: inputField[] = [
   {
@@ -38,8 +40,8 @@ const inputTypeDetails: inputField[] = [
 const SignIn = () => {
   const [checkUser] = useCheckUserMutation();
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
   const onsubmitHandler = async (data: any) => {
-    console.log(data, "data");
     try {
       const response: any = await checkUser(data);
       if (response?.error) {
@@ -49,6 +51,8 @@ const SignIn = () => {
         Cookies.set("access_token", response?.data?.access_token);
         Cookies.set("refresh_token", response?.data?.refresh_token);
         toast.success(" user loggned successfully");
+        dispatch(setLoginedUser(response?.data?.user));
+        localStorage.setItem("user", JSON.stringify(response?.data?.user));
         navigate("/");
       }
     } catch (error: any) {

@@ -199,8 +199,6 @@ CORS_ALLOW_HEADERS = [
 
 CORS_ALLOWED_ORIGINS = ["http://localhost:8000", "http://localhost:3000"]
 
-
-
 # # JWT Configuration
 
 SIMPLE_JWT = {
