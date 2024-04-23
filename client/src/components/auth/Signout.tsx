@@ -24,7 +24,7 @@ const Signout = () => {
           Cookies.remove("refresh_token");
           dispatch(resetLoginedUser());
           localStorage.removeItem("user");
-          navigate("/");
+          window.location.href = "/"
         }}
       />
     </div>

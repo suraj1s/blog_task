@@ -17,11 +17,10 @@ export const mutationHandler = async (
         toast.error(`${response?.error?.data?.errors[0]?.detail}`);
       }
       return;
-    } else {
-      enableToast &&
-        toastmessage &&
-        toast.success(toastmessage);
-        // toast.success(response?.data?.message ?? toastmessage);
+    } else if (enableToast) {
+      toastmessage
+        ? toast.success(toastmessage)
+        : toast.success(response?.data?.message ?? toastmessage);
       onSuccess(response);
       return response;
     }

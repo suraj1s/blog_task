@@ -15,7 +15,7 @@
 
 ### NOTE: Plese signup and then signin to start creating, editig and deleting blogs.Test with different users
 
-##### Only the author can Edit and Delete the Blog
+### Only the author can Edit and Delete the Blog
 
 # Setup Process
 
@@ -23,18 +23,19 @@
 
 ```bash
 git clone https://github.com/suraj1s/blog_task.git
+cd ./blog_task
 ```
 
 # For server
 
 ```bash
-cd server
+cd ./server
 python3 -m venv env
 source env/bin/activate
-pip install requirement.txt
-pyton manage.py makemigratio
-python ma.py migrate
-python man.py runserver
+pip install -r requirements.txt
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
 ```
 
 # For client

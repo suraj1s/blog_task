@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import CustomInput, { inputField } from "../common/CustomInput";
-import { PASSWORD_REGEX } from "../common/constants";
+import { EMAIL_REGEX, PASSWORD_REGEX } from "../common/constants";
 import { useCreateUserMutation } from "../../redux/redux-slices/auth/apiService/auth";
 import { Link, useNavigate } from "react-router-dom";
 import CustomButton from "../common/CustomButton";
@@ -20,11 +20,11 @@ const inputTypeDetails: inputField[] = [
     title: "Email",
     name: "email",
     placeholder: "Enter your email address ",
-    type: "text",
+    type: "email",
     validation: {
       required: " plese enter a valid email ",
       pattern: {
-        value: PASSWORD_REGEX,
+        value: EMAIL_REGEX,
         message: "plese enter a valid email ",
       },
     },
@@ -33,7 +33,7 @@ const inputTypeDetails: inputField[] = [
     title: "Password",
     name: "password",
     placeholder: "Enter your password",
-    type: "text",
+    type: "password",
     validation: {
       required: " plese enter a valid password ",
       pattern: {
@@ -48,7 +48,7 @@ const inputTypeDetails: inputField[] = [
     title: "Retype Password",
     name: "retypepassword",
     placeholder: "Retype your password",
-    type: "text",
+    type: "password",
     validation: {
       required: " plese enter a valid password ",
       pattern: {
