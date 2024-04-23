@@ -28,29 +28,31 @@
 
 # Setup Process
 
-## Clone the repo
+# Clone the repository
 
 ```bash
 git clone https://github.com/suraj1s/blog_task.git
-cd ./blog_task
+cd ./blog_task  # Navigate to the project directory
 ```
 
 # For server
 
+# Setting up the server
+
 ```bash
-cd ./server
-python3 -m venv env
-source env/bin/activate
-pip install -r requirements.txt
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
+cd ./server  # Navigate to the server directory
+python3 -m venv env  # Create a virtual environment
+source env/bin/activate  # Activate the virtual environment
+pip install -r requirements.txt  # Install required Python packages
+python manage.py makemigrations  # Create database migrations
+python manage.py migrate  # Apply migrations to the database
+python manage.py runserver  # Run the Django server
 ```
 
-# For client
+# Setting up the client
 
 ```bash
-cd ./client
-npm install
-npm run dev
+cd ../client # Navigate back to the main project directory and then to the client directory
+npm install # Install dependencies
+npm run dev # Start the development server for the React app
 ```
