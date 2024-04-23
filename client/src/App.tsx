@@ -1,8 +1,10 @@
-function App() {
 
+function App() {
   return (
-   <div className='text-4xl bg-green-500'>hi</div>
-  )
+    <div className="">
+      hello
+    </div>
+  );
 }
 
-export default App
+export default App;
