@@ -17,8 +17,4 @@ export const navLinkData: InavLinks[] = [
     title: "Profile",
     link: "/profile",
   },
-  {
-    title: "Sign Out",
-    link: "/auth/signout",
-  },
 ];
