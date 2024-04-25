@@ -34,6 +34,7 @@ const inputTypeDetails: inputField[] = [
     name: "password",
     placeholder: "Enter your password",
     type: "password",
+    eyeIcon: true,
     validation: {
       required: " plese enter a valid password ",
       pattern: {
@@ -49,6 +50,7 @@ const inputTypeDetails: inputField[] = [
     name: "retypepassword",
     placeholder: "Retype your password",
     type: "password",
+    eyeIcon: true,
     validation: {
       required: " plese enter a valid password ",
       pattern: {
@@ -114,6 +116,7 @@ const SignUp = () => {
               />
               <CustomInput
                 errors={errors}
+                
                 inputfield={inputTypeDetails[2]}
                 register={register}
               />

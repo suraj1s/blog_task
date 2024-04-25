@@ -7,6 +7,8 @@ type Props = {};
 
 const MobileNavbar = ({}: Props) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
+
   return (
     <div className={`  block md:hidden`}>
       <div className=" flex items-center justify-end ">
@@ -43,6 +45,37 @@ const MobileNavbar = ({}: Props) => {
                 </div>
               );
             })}
+          {user.username ? (
+            <div className="border-b border-gray-200 px-3 py-3 text-lg">
+              {
+                <Link
+                  to={"/auth/signout"}
+                  className={`${
+                    location.pathname === "/auth/signout"
+                      ? "font-extrabold text-slate-100"
+                      : "text-slate-200"
+                  }`}
+                >
+                  Sign Out
+                </Link>
+              }
+            </div>
+          ) : (
+            <div className="border-b border-gray-200 px-3 py-3 text-lg">
+              {
+                <Link
+                  to={"/auth/signin"}
+                  className={`${
+                    location.pathname === "/auth/signin"
+                      ? "font-extrabold text-slate-100"
+                      : "text-slate-200"
+                  }`}
+                >
+                  Sign In
+                </Link>
+              }
+            </div>
+          )}
         </div>
       </div>
     </div>
